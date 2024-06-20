@@ -1,0 +1,67 @@
+body {
+  overflow: hidden;
+}
+.background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+.background-home {
+  width: 100vw;
+  height: 100vh;
+
+  background-size: cover;
+  background-position: bottom;
+  filter: blur(5px);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  color: white;
+  transform: scale(1.1);
+}
+
+.logo {
+  font-size: 50px;
+}
+
+nav {
+  position: absolute;
+  width: 100vw;
+}
+
+#tienda,
+#perfil {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+aside {
+  box-shadow: -3px 0px 10px 1px gray;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 10px;
+  gap: 20px;
+}
+
+aside select {
+  display: flex;
+}
+
+.publicaciones {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 680px) {
+  .publicaciones {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .publicaciones {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
