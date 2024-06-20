@@ -15,6 +15,9 @@ export default function Registrarse() {
 
   const navigate = useNavigate();
   const addUser = async () => {
+    const url =
+      "https://marketplace-bxnnxromp-adlmarketplaces-projects.vercel.app/users";
+    const { data } = await axios.post(url, user);
     setUsers([...users, user]);
     alert("Usuario Creado con éxito, intente iniciar sesión");
     navigate("/login");

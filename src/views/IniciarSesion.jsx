@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -14,10 +14,11 @@ export default function IniciarSesion() {
   const [user, setUser] = useState({});
 
   const navigate = useNavigate();
-  const addUser = () => {
-    const userExists =
-      users.some((u) => u.email == user.email && u.password == user.password) ||
-      true;
+  const addUser = async () => {
+    const url =
+      "https://marketplace-bxnnxromp-adlmarketplaces-projects.vercel.app/login";
+    const { data: userExists } = await axios.post(url, user);
+
     if (userExists) {
       setSession(user);
       alert("Usuario identificado con éxito");
